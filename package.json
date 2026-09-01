@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node --experimental-strip-types --test \"src/**/*.test.ts\"",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "preview": "npx --yes http-server out -p 8080 -c-1"
   },
   "dependencies": {
