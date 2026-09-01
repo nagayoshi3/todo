@@ -1,5 +1,7 @@
 # やること — TODO アプリ
 
+**公開URL: https://nagayoshi3.github.io/todo/**
+
 Next.js (App Router) + TypeScript + Tailwind CSS 4 製のシンプルな TODO アプリ。
 サーバーを持たず、タスクはブラウザの `localStorage` に保存されます。
 
@@ -34,6 +36,15 @@ npm run preview   # http-server で out/ を配信 → http://localhost:8080
 > **注意**: `npx http-server` をプロジェクト直下で引数なしに実行すると、`http-server` は
 > `public/` を既定のルートにするため SVG のファイル一覧が表示されます。
 > 必ず `out` を明示してください（`npm run preview` がそれを行います）。
+
+## デプロイ
+
+`main` への push で `.github/workflows/deploy.yml` が走り、GitHub Pages に自動デプロイされます。
+型チェック・Lint・テストが通った場合のみビルドとデプロイに進みます。
+
+GitHub Pages のプロジェクトページは `https://<user>.github.io/todo/` というサブパスで
+配信されるため、CI では `BASE_PATH=/todo` を渡してアセットのパスを合わせています
+（`next.config.ts` 参照）。ローカルビルドでは未設定なのでルート配信のままです。
 
 ## コマンド
 
