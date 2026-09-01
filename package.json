@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test": "node --experimental-strip-types --test \"src/**/*.test.ts\"",
     "typecheck": "next typegen && tsc --noEmit",
-    "preview": "npx --yes http-server out -p 8080 -c-1"
+    "preview": "npm run build:static && npx --yes http-server out -p 8080 -c-1",
+    "build:static": "STATIC_EXPORT=1 next build"
   },
   "dependencies": {
     "next": "16.3.4",

@@ -33,7 +33,7 @@ jobs:
       - run: npm test
 
       - name: Build static site
-        run: npm run build
+        run: npm run build:static
         env:
           # プロジェクトページは https://<user>.github.io/todo/ で配信される
           BASE_PATH: /todo
